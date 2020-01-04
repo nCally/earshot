@@ -12,6 +12,11 @@
       "ios",
       "android",
       "web"
-    ]
+    ],
+    "splash":{
+      "image":"./assests/splash.png",
+      "backgroundColor":"#2B3B46",
+      "resizeMode":"contain"
+    }
   }
 }
