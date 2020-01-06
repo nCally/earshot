@@ -1,18 +1,23 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { withRouter } from "react-router-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import colors from "../../assests/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Layout(props) {
-    return (
-        <View style={styles.container}>
-            <View style={styles.topspace}>
-                {props.backButton ? <MaterialIcons name="arrow-back" size={42} style={{color:colors.words}} /> : null }
-            </View>
-            {props.children}
-        </View>
-    );
-}
+let Layout = withRouter(function(props) {
+            return (
+                <View style={styles.container}>
+                    <View style={styles.topspace}>
+                        {props.backButton ? 
+                        <TouchableOpacity onPress={() => { props.history.push('/') }}>
+                            <MaterialIcons name="arrow-back" size={42} style={{color:colors.words}} /></TouchableOpacity> : null }
+                    </View>
+                    {props.children}
+                </View>
+            );
+});
+
+export default Layout;
 
 const styles = StyleSheet.create({
     container: {
@@ -20,8 +25,9 @@ const styles = StyleSheet.create({
       backgroundColor: colors.main,
     },
     topspace:{
-        height:100,
+        height:130,
         justifyContent:'flex-end',
-        paddingLeft:15
+        paddingLeft:15,
+        paddingBottom:10
     }
   });

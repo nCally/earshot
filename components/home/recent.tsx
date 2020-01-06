@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-native";
 import { Text, Animated, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import colors from "../../assests/colors";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -39,10 +40,10 @@ const styles = StyleSheet.create({
     },
 })
 
-function FirstBook(){
+let FirstBook = withRouter(function(props){
     return (
         <View style={{marginBottom:15}}>
-            <TouchableOpacity onPress={()=>{}} activeOpacity={0.8} style={{
+            <TouchableOpacity onPress={()=>{props.history.push('/single')}} activeOpacity={0.8} style={{
             display:'flex',
             justifyContent:'space-between',
             height:200,backgroundColor:colors.links,padding:10,
@@ -55,12 +56,12 @@ function FirstBook(){
             </TouchableOpacity>
         </View>
     )
-}
+})
 
-function NextTwoBooks(props){
+let NextTwoBooks = withRouter(function(props){
     return(
         <View style={{marginBottom:15}}>
-            <TouchableOpacity onPress={()=>{}} activeOpacity={0.7} style={{
+            <TouchableOpacity onPress={()=>{ props.history.push('/single') }} activeOpacity={0.7} style={{
             display:'flex',
             justifyContent:'space-between',
             backgroundColor:colors.secondary,padding:10,
@@ -72,12 +73,12 @@ function NextTwoBooks(props){
             </TouchableOpacity>
         </View>
     )
-}
+})
 
-function LastTwoBooks(props){
+let LastTwoBooks = withRouter(function(props){
     return(
         <View style={{marginBottom:15}}>
-            <TouchableOpacity onPress={()=>{}} activeOpacity={0.7} style={{
+            <TouchableOpacity onPress={()=>{ props.history.push('/single') }} activeOpacity={0.7} style={{
             display:'flex',
             justifyContent:'space-between',
             backgroundColor:colors.secondary,padding:10,
@@ -89,4 +90,4 @@ function LastTwoBooks(props){
             </TouchableOpacity>
         </View>
     )
-}
+})

@@ -78,7 +78,7 @@ export default function Home(){
                                 <TextInput style={styles.textInput} maxLength={4} />
                             </View>
                             <View style={{paddingTop:30}}>
-                                <TouchableOpacity onPress={()=>{}} style={[styles.saveBtn, {backgroundColor:disabled ? "#cccccc" : colors.links}]} activeOpacity={disabled ? 1 : 0.8}>
+                                <TouchableOpacity onPress={()=>{}} style={[styles.saveBtn, {backgroundColor:disabled ? "rgba(0,0,0,0.2)" : colors.links}]} activeOpacity={disabled ? 1 : 0.8}>
                                     <Text style={{color:colors.words,fontSize:24,fontFamily:'poppins-semibold',textAlign:'center'}}>Save details</Text>
                                 </TouchableOpacity>
                             </View>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     },
     saveBtn:{
         borderRadius:5,
-        elevation:5,
+        elevation:1,
         paddingTop:5,paddingBottom:5
     }
 })

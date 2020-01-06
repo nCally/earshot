@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { NativeRouter, Route } from "react-router-native";
 import Home from "./components/home";
+import Single from "./components/onebook";
 
 const loadFonts = () => {
   return Font.loadAsync({
@@ -18,7 +19,9 @@ export default function App() {
 
   if(!fontLoaded){
     return (
-      <AppLoading startAsync={loadFonts} onFinish={() => setFontLoaded(true)} />
+      <AppLoading 
+      startAsync={loadFonts} 
+      onFinish={() => setFontLoaded(true)} />
     )
   }
 
@@ -26,6 +29,7 @@ export default function App() {
     <Provider store={store}>
       <NativeRouter>
         <Route exact path="/" component={Home} />
+        <Route exact path="/single" component={Single} />
       </NativeRouter>
     </Provider>
   );

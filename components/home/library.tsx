@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-native";
 import { View, Text, Animated, SectionList, StyleSheet, TouchableOpacity } from "react-native";
 import colors from "../../assests/colors";
 import formatter from "./formatSectionListData";
@@ -69,13 +70,13 @@ const styles = StyleSheet.create({
     }
 })
 
-function Item({ title, author }){
+let Item = withRouter(function(props){
     return (
-        <TouchableOpacity onPress={()=>{}} activeOpacity={0.6}>
+        <TouchableOpacity onPress={()=>{ props.history.push('/single') }} activeOpacity={0.6}>
             <View style={styles.itemWrapper}>
-                <Text style={styles.title}>{ title }</Text>
-                <Text style={styles.author}>{ author }</Text>
+                <Text style={styles.title}>{ props.title }</Text>
+                <Text style={styles.author}>{ props.author }</Text>
             </View>
         </TouchableOpacity>
     )
-}
+})
