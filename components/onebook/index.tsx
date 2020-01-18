@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Slider } from "react-native";
 import Layout from "../layout";
 import colors from "../../assests/colors";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function(){
 
@@ -24,14 +24,14 @@ export default function(){
                                 fontFamily:'poppins-semibold'}}>E</Text>
                         </View>
                         <Text style={styles.title}>Essentialism - The disciplined pursuit of less</Text>
-                        <Text style={[styles.author, {opacity:0.7}]}>James Allen <MaterialIcons name="keyboard-arrow-right" /> 2015</Text>
+                        <Text style={[styles.author, {opacity:0.7}]}>James Allen <FontAwesome name="angle-right" /> 2015</Text>
                     </View>
                 </View>
                 <View>
                     <View style={{flexDirection:"row",justifyContent:"center",marginTop:35}}>
                         <View style={{flexDirection:"row",alignItems:"center", justifyContent:"space-between", width:"60%"}}>
                             <TouchableOpacity>
-                                <Ionicons name="ios-rewind" size={48} color={colors.links} style={styles.shadow} />
+                                <FontAwesome name="backward" size={48} color={colors.links} style={styles.shadow} />
                             </TouchableOpacity>
                             <View>
                                 {
@@ -39,17 +39,17 @@ export default function(){
                                     <TouchableOpacity onPress={() => {
                                         changePlay(!isPlaying)
                                     }}>
-                                        <Ionicons name="ios-play-circle" size={60} color={colors.links} style={styles.shadow} />
+                                        <FontAwesome name="play-circle" size={60} color={colors.links} style={styles.shadow} />
                                     </TouchableOpacity> : 
                                     <TouchableOpacity onPress={() => {
                                         changePlay(!isPlaying)
                                     }}>
-                                        <Ionicons name="ios-pause" size={60} color={colors.links} />
+                                        <FontAwesome name="pause" size={60} color={colors.links} />
                                     </TouchableOpacity>
                                 }
                             </View>
                             <TouchableOpacity>
-                                <Ionicons name="ios-fastforward" size={48} color={colors.links} style={styles.shadow} />
+                                <FontAwesome name="forward" size={48} color={colors.links} style={styles.shadow} />
                             </TouchableOpacity>
                         </View>
                     </View>

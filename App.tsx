@@ -6,13 +6,16 @@ import store from "./redux/store";
 import { NativeRouter, Route } from "react-router-native";
 import Home from "./components/home";
 import Single from "./components/onebook";
+import { FontAwesome } from "@expo/vector-icons"
+import CreateBook from './components/home/createBook';
 
 const loadFonts = () => {
   return Font.loadAsync({
     'poppins':require('./assests/fonts/Poppins-Regular.ttf'),
-    'poppins-semibold':require('./assests/fonts/Poppins-SemiBold.ttf')
+    'poppins-semibold':require('./assests/fonts/Poppins-SemiBold.ttf'),
   })
 }
+
 
 export default function App() {
   const [ fontLoaded, setFontLoaded ] = useState(false);
@@ -29,6 +32,7 @@ export default function App() {
     <Provider store={store}>
       <NativeRouter>
         <Route exact path="/" component={Home} />
+        <Route exact path="/create" component={CreateBook} />
         <Route exact path="/single" component={Single} />
       </NativeRouter>
     </Provider>

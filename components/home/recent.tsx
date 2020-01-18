@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-native";
 import { Text, Animated, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import colors from "../../assests/colors";
-import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function Recent(){
 
@@ -49,8 +49,8 @@ let FirstBook = withRouter(function(props){
             height:200,backgroundColor:colors.links,padding:10,
             elevation:5,borderRadius:5,width:"100%"}}>
                 <Text style={{color:colors.words,fontFamily:'poppins',fontSize:18}}>As a man thinks</Text>
-                <MaterialIcons 
-                name="play-circle-filled" 
+                <FontAwesome 
+                name="play-circle" 
                 size={55} color={colors.main} 
                 style={{alignSelf:'flex-end',marginBottom:10}} />
             </TouchableOpacity>
@@ -68,7 +68,7 @@ let NextTwoBooks = withRouter(function(props){
             elevation:5,borderRadius:5,width:"100%"}}>
                 <Text style={{color:colors.words,fontSize:14,fontFamily:'poppins'}}>{props.name}</Text>
                 <View style={{height:30}}></View>
-                <MaterialIcons name="play-circle-filled" size={32} color={colors.main} 
+                <FontAwesome name="play-circle" size={32} color={colors.main} 
                 style={{alignSelf:'flex-end',marginBottom:10}} /> 
             </TouchableOpacity>
         </View>
@@ -85,7 +85,7 @@ let LastTwoBooks = withRouter(function(props){
             elevation:5,borderRadius:5,width:"100%"}}>
                 <Text style={{color:colors.words,fontSize:14,fontFamily:'poppins'}}>{props.name}</Text> 
                 <View style={{height:30}}></View>
-                <MaterialIcons name="play-circle-filled" size={32} color={colors.main} 
+                <FontAwesome name="play-circle" size={32} color={colors.main} 
                 style={{alignSelf:'flex-end',marginBottom:10}} /> 
             </TouchableOpacity>
         </View>
